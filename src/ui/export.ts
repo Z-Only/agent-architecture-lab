@@ -15,5 +15,10 @@ export function downloadPlan(content: string): void {
   link.href = url
   link.download = 'agent-architecture-plan.md'
   document.body.append(link)
-  try { link.click() } finally { link.remove(); URL.revokeObjectURL(url) }
+  try { link.click() } finally {
+    link.remove()
+    // Give the browser's asynchronous download task time to consume the URL.
+    // This grace period starts a download; it does not prove completion.
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  }
 }

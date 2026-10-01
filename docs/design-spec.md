@@ -22,3 +22,5 @@ Test rail: Deterministic simulation; Inject a fault; Run simulation; Simulation 
 - Default config may differ from screenshot to follow the validated domain defaults. Diagram never promises actual persistent resume or model execution.
 - Theme and language native selects/choice buttons, fully translated labels. No dead toolbar controls.
 - Sources and method disclosed through inline details beneath the working surface.
+
+- A selectable, read-only Markdown plan preview is available in the export area. Live browser QA could not verify a completed download, so this preserves plan retrieval without depending on download support. It updates with the current configuration and trace.

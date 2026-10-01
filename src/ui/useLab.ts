@@ -17,6 +17,7 @@ export function useLab(storage: Pick<Storage, 'getItem' | 'setItem'> = { getItem
   const result = ref<SimulationResult | null>(null)
   const notice = ref<'changed' | 'resetDone' | 'exported' | 'exportFailed' | null>(null)
   const t = computed(() => messages[locale.value])
+  const planText = computed(() => createPlan(blueprint.value, locale.value, fault.value, result.value))
   watch(input, value => {
     storageState.value = writeInput(storage, value)
     result.value = null
@@ -34,8 +35,8 @@ export function useLab(storage: Pick<Storage, 'getItem' | 'setItem'> = { getItem
   function reset() { input.value = { ...DEFAULT_INPUT }; result.value = null; notice.value = 'resetDone' }
   function run() { result.value = simulate(blueprint.value, fault.value); notice.value = null }
   function exportPlan() {
-    try { downloadPlan(createPlan(blueprint.value, locale.value, fault.value, result.value)); notice.value = 'exported' }
+    try { downloadPlan(planText.value); notice.value = 'exported' }
     catch { notice.value = 'exportFailed' }
   }
-  return { input, locale, theme, storageState, blueprint, fault, result, notice, t, updateInput, reset, run, exportPlan }
+  return { input, locale, theme, storageState, blueprint, fault, result, notice, t, planText, updateInput, reset, run, exportPlan }
 }

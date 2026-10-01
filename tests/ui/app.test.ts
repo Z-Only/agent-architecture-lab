@@ -16,6 +16,7 @@ describe('complete architecture workbench', () => {
   it('starts with a readable graph, constraints, empty trace and official sources', () => {
     const wrapper = app()
     expect(wrapper.find('h1').text()).toBe(messages.en.title)
+    expect(wrapper.find('.reference-section').attributes('aria-label')).toBe(messages.en.how)
     expect(wrapper.findAll('.workflow-node').length).toBeGreaterThan(3)
     expect(wrapper.find('.trace-empty').exists()).toBe(true)
     expect(wrapper.find('.storage-notice').exists()).toBe(false)
@@ -79,6 +80,7 @@ describe('complete architecture workbench', () => {
     const wrapper = app()
     await wrapper.get('button[lang="zh-CN"]').trigger('click')
     expect(wrapper.find('h1').text()).toBe(messages.zh.title)
+    expect(wrapper.find('.reference-section').attributes('aria-label')).toBe(messages.zh.how)
     expect(document.documentElement.lang).toBe('zh-CN')
     for (const theme of ['dark', 'light', 'system']) {
       await wrapper.get('[data-testid=theme]').setValue(theme)

@@ -3,7 +3,7 @@ export type Locale = 'en' | 'zh'
 export type Theme = 'light' | 'dark' | 'system'
 export const messages = {
   en: {
-    title: 'Design the workflow. Test the failure.', subtitle: 'Turn constraints into an agent architecture you can explain.', export: 'Export plan', exported: 'Download requested: agent-architecture-plan.md.', exportFailed: 'The download could not start. Please try again.',
+    viewPlan: 'View plan text', planText: 'Current plan in Markdown', previewHelp: 'Select and copy this text if your browser does not save the download. It updates as your design and simulation change.', title: 'Design the workflow. Test the failure.', subtitle: 'Turn constraints into an agent architecture you can explain.', export: 'Export plan', exported: 'Download requested: agent-architecture-plan.md.', exportFailed: 'The download could not start. Please try again.',
     constraints: 'Set constraints', blueprint: 'Your blueprint', stress: 'Stress test', reset: 'Reset', resetDone: 'Default settings restored.',
     taskShape: 'Task shape', fixed: 'Defined steps', fixedHelp: 'A clear sequence toward a known goal.', open: 'Open-ended', openHelp: 'The work needs to be broken down as it unfolds.',
     sideEffects: 'Side effects', none: 'Read only', noneHelp: 'No changes to external systems.', reversible: 'Reversible', reversibleHelp: 'Changes can be undone.', irreversible: 'Irreversible', irreversibleHelp: 'Changes cannot be easily undone.',
@@ -14,7 +14,7 @@ export const messages = {
     theme: 'Appearance', light: 'Light', dark: 'Dark', system: 'System', language: 'Language', savedInvalid: 'Saved settings were invalid. Safe defaults loaded.', storageUnavailable: 'Browser storage is unavailable. Changes work for this visit only.', settingsSaved: 'Saved in this browser', skip: 'Skip to workbench', node: 'Step', connector: 'Next step',
   },
   zh: {
-    title: '设计工作流，检验失败路径。', subtitle: '把任务约束变成讲得清楚的智能体架构。', export: '导出方案', exported: '已请求下载方案：agent-architecture-plan.md。', exportFailed: '下载未能开始，请重试。',
+    viewPlan: '查看方案文本', planText: '当前方案（Markdown）', previewHelp: '如果浏览器无法保存下载，可直接选择并复制文本。内容会随设计和模拟结果更新。', title: '设计工作流，检验失败路径。', subtitle: '把任务约束变成讲得清楚的智能体架构。', export: '导出方案', exported: '已请求下载方案：agent-architecture-plan.md。', exportFailed: '下载未能开始，请重试。',
     constraints: '设置约束', blueprint: '架构蓝图', stress: '故障测试', reset: '重置', resetDone: '已恢复默认设置。',
     taskShape: '任务形式', fixed: '固定步骤', fixedHelp: '通过明确的步骤达成已知目标。', open: '开放任务', openHelp: '需要随着任务推进逐步拆解工作。',
     sideEffects: '外部操作', none: '只读', noneHelp: '不修改外部系统。', reversible: '可撤销', reversibleHelp: '操作造成的变更可以撤销。', irreversible: '难以撤销', irreversibleHelp: '操作造成的变更难以撤销。',
